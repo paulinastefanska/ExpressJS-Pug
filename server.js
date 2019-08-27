@@ -16,7 +16,11 @@ app.get("/login", function(req, res) {
   });
 });
 
+app.get("/auth/google", function(req, res) {
+  res.render("logged.pug");
+});
+
 app.listen(3000);
 app.use(function (req, res, next) {
-    res.status(404).send('Wybacz, nie mogliśmy odnaleźć tego, czego żądasz!')
+    res.status(404).send('Oops something went wrong!')
 });
