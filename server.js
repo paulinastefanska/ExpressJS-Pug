@@ -9,19 +9,11 @@ app.get('/', function (req, res) {
     res.render('home.pug');
 });
 
-app.get('/store', function (req, res) {
-    res.send('To jest sklep');
-});
-
-app.get('/first-template', function(req, res){
-    res.render('first-template');
-});
-
-app.get('/dynamic-view', function(req, res){
-    res.render('dynamic', {
-        name: "Moja dynamiczna strona",
-        url: "http://www.google.com"
-    });
+app.get("/login", function(req, res) {
+  res.render("login.pug", {
+    login: req.query.login,
+    password: req.query.password
+  });
 });
 
 app.listen(3000);
