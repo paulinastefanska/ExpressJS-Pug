@@ -3,13 +3,10 @@ var app = express();
 
 app.set('view engine', 'pug');
 app.set('views','./views');
-app.use('/store', function(req, res, next){
-    console.log('Jestem pośrednikiem przy żądaniu do /store');
-    next();
-});
+app.use(express.static('views'));
 
 app.get('/', function (req, res) {
-    res.send('Hello world!');
+    res.render('home.pug');
 });
 
 app.get('/store', function (req, res) {
